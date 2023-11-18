@@ -16,6 +16,10 @@ rotatedArray[index] = A[i]; assigns the current element to its new position in t
 
 
 //#THE BINARY GAP EXPLANATION//
+
+
+Converting the given positive integer N to its binary representation using N.toString(2). The toString(2) method converts the integer to a string of '0's and '1's representing its binary form.
+
  The concepts of currentGap and maxGap to the examples:
 
 currentGap:
@@ -26,6 +30,11 @@ maxGap:
 
 maxGap represents the maximum length of binary gaps encountered so far while iterating through the binary representation.
 It gets updated whenever a longer sequence of consecutive 0 bits is found.
+
+
+Two variables, currentGap and maxGap, are initialized to keep track of the current gap length and the maximum gap length, respectively.
+
+
 Let's use the example of the binary representation 1000010001 (decimal number 529) to illustrate:
 
 Starting with currentGap and maxGap both set to 0.
@@ -33,7 +42,18 @@ Starting with currentGap and maxGap both set to 0.
 let currentGap = 0;
     let maxGap = 0;
 
-Iterate through the binary representation:
+
+
+for loop to iterate through each character in the binary representation.
+Iterate through the binary representation and if the current digit is '0', it means a potential gap is found, so currentGap is incremented.
+
+And if If the current digit is '1', it means the end of a potential gap, so the function updates maxGap if the current gap length (currentGap) is greater than the current maximum gap (maxGap). Then, it resets currentGap to 0.(maxGap = Math.max(maxGap, currentGap);
+            currentGap = 0; )
+
+
+After iterating through the entire binary representation, the function returns the maxGap, which represents the length of the longest binary gap.
+
+As shown below:-
 
 Encounter 1, reset currentGap to 0.
 Encounter 0, increment currentGap to 1.
