@@ -1,0 +1,50 @@
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+
+/////SOLUTION ONE
+
+function solution(A, K) {
+    // Implement your solution here
+    const N = A.length;
+    K = K % N
+    for (let i = 0; i < K; i++) {
+      const pop = A.pop();
+      A.unshift(pop)
+    }
+    return A
+}
+
+
+///SOLUTION TWO.
+
+
+function solution(A, K) {
+    // Get the length of the array
+    const N = A.length;
+
+    //The if statement set to return the Original array when no rotation is needed.
+    if (N === 0 || K === 0) {
+        return A;
+    }
+    // Initialize/creates an empty array to store the elements after rotation.
+    const rotatedArray = [];
+
+    // Iterate through each element in the original array
+    for (let i = 0; i < N; i++) {
+        // Calculate the new index after rotation
+        const index = (i + K) % N;
+
+        // Assign the current element to its new position in the rotated array
+        rotatedArray[index] = A[i];
+    }
+
+    // Return the final rotated array
+    return rotatedArray;
+}
+
+
+

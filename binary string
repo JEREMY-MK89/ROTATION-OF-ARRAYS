@@ -1,0 +1,36 @@
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+////SOLUTION 
+
+function solution(N) {
+    // Convert the number to binary representation
+    const binaryRepresentation = N.toString(2);
+
+    // Initialize variables to track the current gap length and the maximum gap length
+    let currentGap = 0;
+    let maxGap = 0;
+
+    // Iterate through the binary representation
+    for (let i = 0; i < binaryRepresentation.length; i++) {
+        // If the current digit is '0', increment the current gap length
+        if (binaryRepresentation[i] === '0') {
+            currentGap++;
+        }
+        // If the current digit is '1', update the maximum gap length if needed and reset the current gap length
+        else if (binaryRepresentation[i] === '1') {
+            maxGap = Math.max(maxGap, currentGap);
+            currentGap = 0;
+        }
+    }
+
+    // Return the maximum gap length
+    return maxGap;
+}
+
+
+
+
+
+
