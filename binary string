@@ -25,7 +25,7 @@ function solution(N) {
         }
     }
 
-    // Return the maximum gap length
+    // Return the maximum gap length//
     return maxGap;
 }
 
